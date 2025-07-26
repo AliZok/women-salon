@@ -1,103 +1,411 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import Image from "next/image"
+import Link from "next/link"
 
-export default function Home() {
+// Remove this line:
+// import { ScissorsIcon, ClockIcon, MapPinIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline"
+// import { StarIcon as StarSolidIcon } from "@heroicons/react/24/solid"
+
+// Replace with Iconsax imports:
+import { Scissor, Clock, Location, Call, Sms, Star1 } from "iconsax-react"
+
+export default function HairSalonPage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="min-h-screen bg-black text-white">
+      {/* Header */}
+      <header className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-yellow-500/20">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            {/* Replace <ScissorsIcon className="h-8 w-8 text-yellow-500" /> with <Scissor size="32" color="#eab308" /> */}
+            <Scissor size="32" color="#eab308" />
+            <span className="text-2xl font-bold text-yellow-500">Luxe Salon</span>
+          </div>
+          <nav className="hidden md:flex space-x-8">
+            <Link href="#home" className="hover:text-yellow-500 transition-colors">
+              Home
+            </Link>
+            <Link href="#services" className="hover:text-yellow-500 transition-colors">
+              Services
+            </Link>
+            <Link href="#about" className="hover:text-yellow-500 transition-colors">
+              About
+            </Link>
+            <Link href="#gallery" className="hover:text-yellow-500 transition-colors">
+              Gallery
+            </Link>
+            <Link href="#contact" className="hover:text-yellow-500 transition-colors">
+              Contact
+            </Link>
+          </nav>
+          <Button className="bg-yellow-500 text-black hover:bg-yellow-600">Book Now</Button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section id="home" className="relative min-h-screen flex items-center justify-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10"></div>
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/placeholder.svg?height=1080&width=1920"
+          alt="Luxury Hair Salon Interior"
+          fill
+          className="object-cover"
           priority
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="relative z-20 text-center max-w-4xl mx-auto px-4">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <span className="text-white">Transform Your</span>
+            <br />
+            <span className="text-yellow-500">Beauty</span>
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
+            Experience luxury hair styling and treatments at our premium salon. Where elegance meets expertise.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-yellow-500 text-black hover:bg-yellow-600 text-lg px-8 py-3">
+              Book Appointment
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black text-lg px-8 py-3 bg-transparent"
+            >
+              View Services
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-yellow-500">Premium</span> Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Indulge in our comprehensive range of luxury hair and beauty services
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Hair Cutting & Styling",
+                description: "Expert cuts and styling for all hair types",
+                price: "From $80",
+                image: "/placeholder.svg?height=300&width=400",
+              },
+              {
+                title: "Hair Coloring",
+                description: "Premium coloring techniques and treatments",
+                price: "From $120",
+                image: "/placeholder.svg?height=300&width=400",
+              },
+              {
+                title: "Hair Treatments",
+                description: "Nourishing treatments for healthy hair",
+                price: "From $60",
+                image: "/placeholder.svg?height=300&width=400",
+              },
+              {
+                title: "Bridal Styling",
+                description: "Special occasion and bridal hair styling",
+                price: "From $150",
+                image: "/placeholder.svg?height=300&width=400",
+              },
+              {
+                title: "Extensions",
+                description: "Premium hair extensions and styling",
+                price: "From $200",
+                image: "/placeholder.svg?height=300&width=400",
+              },
+              {
+                title: "Keratin Treatment",
+                description: "Smoothing and strengthening treatments",
+                price: "From $180",
+                image: "/placeholder.svg?height=300&width=400",
+              },
+            ].map((service, index) => (
+              <Card
+                key={index}
+                className="bg-gray-900 border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-300 group"
+              >
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={service.image || "/placeholder.svg"}
+                    alt={service.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-yellow-500 mb-2">{service.title}</h3>
+                  <p className="text-gray-300 mb-4">{service.description}</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-2xl font-bold text-yellow-500">{service.price}</span>
+                    <Button size="sm" className="bg-yellow-500 text-black hover:bg-yellow-600">
+                      Book Now
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="text-yellow-500">About</span> Luxe Salon
+              </h2>
+              <p className="text-lg text-gray-300 mb-6">
+                With over 15 years of experience in luxury hair styling, Luxe Salon has become the premier destination
+                for discerning clients who demand excellence. Our team of master stylists combines artistic vision with
+                technical expertise to create stunning transformations.
+              </p>
+              <p className="text-lg text-gray-300 mb-8">
+                We use only the finest products and cutting-edge techniques to ensure every client leaves feeling
+                confident and beautiful. Our commitment to excellence and personalized service has made us the trusted
+                choice for celebrities, professionals, and style enthusiasts alike.
+              </p>
+              <div className="grid grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-yellow-500">15+</div>
+                  <div className="text-gray-300">Years Experience</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-yellow-500">5000+</div>
+                  <div className="text-gray-300">Happy Clients</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-yellow-500">10+</div>
+                  <div className="text-gray-300">Expert Stylists</div>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <Image
+                src="/placeholder.svg?height=600&width=500"
+                alt="Salon Interior"
+                width={500}
+                height={600}
+                className="rounded-lg shadow-2xl"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-yellow-500 text-black p-6 rounded-lg">
+                <div className="flex items-center space-x-2">
+                  {/* Replace <StarSolidIcon className="h-6 w-6" /> with <Star1 size="24" color="#eab308" variant="Bold" /> */}
+                  <Star1 size="24" color="#eab308" variant="Bold" />
+                  <span className="text-2xl font-bold">4.9</span>
+                </div>
+                <div className="text-sm">Google Reviews</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-yellow-500">Our</span> Work
+            </h2>
+            <p className="text-xl text-gray-300">Discover the artistry and craftsmanship in every transformation</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {Array.from({ length: 8 }, (_, i) => (
+              <div key={i} className="relative group overflow-hidden rounded-lg aspect-square">
+                <Image
+                  src={`/placeholder.svg?height=300&width=300&query=beautiful hair styling transformation ${i + 1}`}
+                  alt={`Hair styling work ${i + 1}`}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Button size="sm" className="bg-yellow-500 text-black hover:bg-yellow-600">
+                    View Details
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-yellow-500">Client</span> Reviews
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Sarah Johnson",
+                review:
+                  "Absolutely incredible experience! The stylists are true artists and the salon atmosphere is so luxurious.",
+                rating: 5,
+              },
+              {
+                name: "Michael Chen",
+                review: "Best salon in the city. Professional service, amazing results, and worth every penny.",
+                rating: 5,
+              },
+              {
+                name: "Emma Williams",
+                review:
+                  "I've been coming here for years and they never disappoint. Always leave feeling like a million dollars!",
+                rating: 5,
+              },
+            ].map((testimonial, index) => (
+              <Card key={index} className="bg-gray-900 border-yellow-500/20">
+                <CardContent className="p-6">
+                  <div className="flex mb-4">
+                    {/* Replace <StarSolidIcon key={i} className="h-5 w-5 text-yellow-500" /> with <Star1 key={i} size="20" color="#eab308" variant="Bold" /> */}
+                    {Array.from({ length: testimonial.rating }, (_, i) => (
+                      <Star1 key={i} size="20" color="#eab308" variant="Bold" />
+                    ))}
+                  </div>
+                  <p className="text-gray-300 mb-4 italic">"{testimonial.review}"</p>
+                  <div className="font-semibold text-yellow-500">{testimonial.name}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-yellow-500">Get In</span> Touch
+            </h2>
+            <p className="text-xl text-gray-300">Ready to transform your look? Book your appointment today</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-bold text-yellow-500 mb-6">Contact Information</h3>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  {/* Replace <MapPinIcon className="h-6 w-6 text-yellow-500" /> with <Location size="24" color="#eab308" /> */}
+                  <Location size="24" color="#eab308" />
+                  <span className="text-gray-300">123 Luxury Avenue, Downtown, NY 10001</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  {/* Replace <PhoneIcon className="h-6 w-6 text-yellow-500" /> with <Call size="24" color="#eab308" /> */}
+                  <Call size="24" color="#eab308" />
+                  <span className="text-gray-300">(555) 123-4567</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  {/* Replace <EnvelopeIcon className="h-6 w-6 text-yellow-500" /> with <Sms size="24" color="#eab308" /> */}
+                  <Sms size="24" color="#eab308" />
+                  <span className="text-gray-300">info@luxesalon.com</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  {/* Replace <ClockIcon className="h-6 w-6 text-yellow-500" /> with <Clock size="24" color="#eab308" /> */}
+                  <Clock size="24" color="#eab308" />
+                  <div className="text-gray-300">
+                    <div>Mon-Fri: 9:00 AM - 8:00 PM</div>
+                    <div>Sat-Sun: 10:00 AM - 6:00 PM</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <h4 className="text-xl font-bold text-yellow-500 mb-4">Follow Us</h4>
+                <div className="flex space-x-4">
+                  <Link href="#" className="text-gray-300 hover:text-yellow-500 transition-colors">
+                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.024-.105-.949-.199-2.403.041-3.439.219-.937 1.404-5.965 1.404-5.965s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z" />
+                    </svg>
+                  </Link>
+                  <Link href="#" className="text-gray-300 hover:text-yellow-500 transition-colors">
+                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                  </Link>
+                  <Link href="#" className="text-gray-300 hover:text-yellow-500 transition-colors">
+                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <Card className="bg-gray-900 border-yellow-500/20">
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold text-yellow-500 mb-6">Book Appointment</h3>
+                <form className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <Input
+                      placeholder="First Name"
+                      className="bg-black border-gray-700 text-white placeholder-gray-400 focus:border-yellow-500"
+                    />
+                    <Input
+                      placeholder="Last Name"
+                      className="bg-black border-gray-700 text-white placeholder-gray-400 focus:border-yellow-500"
+                    />
+                  </div>
+                  <Input
+                    type="email"
+                    placeholder="Email"
+                    className="bg-black border-gray-700 text-white placeholder-gray-400 focus:border-yellow-500"
+                  />
+                  <Input
+                    type="tel"
+                    placeholder="Phone Number"
+                    className="bg-black border-gray-700 text-white placeholder-gray-400 focus:border-yellow-500"
+                  />
+                  <Input type="date" className="bg-black border-gray-700 text-white focus:border-yellow-500" />
+                  <Textarea
+                    placeholder="Service Details / Special Requests"
+                    className="bg-black border-gray-700 text-white placeholder-gray-400 focus:border-yellow-500"
+                    rows={4}
+                  />
+                  <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 text-lg py-3">
+                    Book Appointment
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black border-t border-yellow-500/20 py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+              {/* Replace <ScissorsIcon className="h-6 w-6 text-yellow-500" /> with <Scissor size="32" color="#eab308" /> */}
+              <Scissor size="32" color="#eab308" />
+              <span className="text-xl font-bold text-yellow-500">Luxe Salon</span>
+            </div>
+            <div className="text-gray-400 text-center md:text-right">
+              <p>&copy; 2024 Luxe Salon. All rights reserved.</p>
+              <p className="text-sm mt-1">Luxury Hair Styling & Beauty Services</p>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
