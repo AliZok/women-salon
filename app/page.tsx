@@ -40,7 +40,7 @@ export default function HairSalonPage() {
               Contact
             </Link>
           </nav>
-          <Button className="bg-[#fc006f] text-black hover:bg-yellow-600">Book Now</Button>
+          <Button className="bg-[#fc006f] text-black hover:bg-[#cc0159] cursor-pointer">Book Now</Button>
         </div>
       </header>
 
@@ -64,7 +64,7 @@ export default function HairSalonPage() {
             Experience luxury hair styling and treatments at our premium salon. Where elegance meets expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#fc006f] text-black hover:bg-yellow-600 text-lg px-8 py-3">
+            <Button size="lg" className="bg-[#fc006f] text-black hover:bg-[#cc0159] text-lg px-8 py-3 cursor-pointer">
               Book Appointment
             </Button>
             <Button
@@ -148,7 +148,7 @@ export default function HairSalonPage() {
                   <p className="text-gray-300 mb-4">{service.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-2xl font-bold text-[#fc006f]">{service.price}</span>
-                    <Button size="sm" className="bg-[#fc006f] text-black hover:bg-yellow-600">
+                    <Button size="sm" className="bg-[#fc006f] text-black hover:bg-[#cc0159] cursor-pointer">
                       Book Now
                     </Button>
                   </div>
@@ -233,7 +233,7 @@ export default function HairSalonPage() {
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button size="sm" className="bg-[#fc006f] text-black hover:bg-yellow-600">
+                  <Button size="sm" className="bg-[#fc006f] text-black hover:bg-[#cc0159] cursor-pointer">
                     View Details
                   </Button>
                 </div>
@@ -380,7 +380,7 @@ export default function HairSalonPage() {
                     className="bg-black border-gray-700 text-white placeholder-gray-400 focus:border-[#fc006f]"
                     rows={4}
                   />
-                  <Button className="w-full bg-[#fc006f] text-black hover:bg-yellow-600 text-lg py-3">
+                  <Button className="w-full bg-[#fc006f] text-black hover:bg-[#cc0159] text-lg py-3 cursor-pointer">
                     Book Appointment
                   </Button>
                 </form>
