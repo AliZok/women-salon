@@ -224,16 +224,134 @@ export default function HairSalonPage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {Array.from({ length: 8 }, (_, i) => (
-              <div key={i} className="relative group overflow-hidden rounded-lg aspect-square">
+            {[
+              {
+                id: 1,
+                title: "Elegant Updo",
+                description: "Classic bridal styling",
+                image: "/images/girl-1.jpg",
+                category: "Bridal"
+              },
+              {
+                id: 2,
+                title: "Modern Bob",
+                description: "Contemporary short cut",
+                image: "/images/girl-2.jpg",
+                category: "Cutting"
+              },
+              {
+                id: 3,
+                title: "Balayage Highlights",
+                description: "Natural sun-kissed look",
+                image: "/images/wave-hairs.jpg",
+                category: "Coloring"
+              },
+              {
+                id: 4,
+                title: "Voluminous Curls",
+                description: "Dramatic styling",
+                image: "/images/girl-3.avif",
+                category: "Styling"
+              },
+              {
+                id: 5,
+                title: "Sleek Straight",
+                description: "Smooth and shiny",
+                image: "/images/girl-4.jpg",
+                category: "Treatment"
+              },
+              {
+                id: 6,
+                title: "Textured Layers",
+                description: "Movement and volume",
+                image: "/images/girl-5.avif",
+                category: "Cutting"
+              },
+              {
+                id: 7,
+                title: "Romantic Waves",
+                description: "Soft and feminine",
+                image: "/images/girl-6.avif",
+                category: "Styling"
+              },
+              {
+                id: 8,
+                title: "Bold Color",
+                description: "Vibrant transformation",
+                image: "/images/girl-7.jpg",
+                category: "Coloring"
+              },
+              {
+                id: 9,
+                title: "Golden Highlights",
+                description: "Luxurious golden tones",
+                image: "/images/girl-8.jpg",
+                category: "Coloring"
+              },
+              {
+                id: 10,
+                title: "Natural Beauty",
+                description: "Effortless elegance",
+                image: "/images/girl-9.webp",
+                category: "Styling"
+              },
+              {
+                id: 11,
+                title: "Pink Perfection",
+                description: "Bold and beautiful",
+                image: "/images/girl-12.jpg",
+                category: "Coloring"
+              },
+              {
+                id: 12,
+                title: "Lady Beauty",
+                description: "Timeless sophistication",
+                image: "/images/girl-10.jpg",
+                category: "Styling"
+              },
+              {
+                id: 13,
+                title: "Dance Beauty",
+                description: "Dynamic movement styling",
+                image: "/images/girl-13.jpg",
+                category: "Styling"
+              },
+              {
+                id: 14,
+                title: "Gold Woman",
+                description: "Luxury golden transformation",
+                image: "/images/girl14.jpg",
+                category: "Coloring"
+              },
+              {
+                id: 15,
+                title: "Woman Elegance",
+                description: "Sophisticated beauty",
+                image: "/images/dance-woman.jpg",
+                category: "Styling"
+              },
+              {
+                id: 16,
+                title: "Girl Eleven",
+                description: "Modern chic styling",
+                image: "/images/girl-11.jpg",
+                category: "Cutting"
+              }
+            ].map((item) => (
+              <div key={item.id} className="relative group overflow-hidden rounded-lg aspect-square">
                 <Image
-                  src={`/placeholder.svg?height=300&width=300&query=beautiful hair styling transformation ${i + 1}`}
-                  alt={`Hair styling work ${i + 1}`}
+                  src={item.image}
+                  alt={item.title}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button size="sm" className="bg-[#fc006f] text-black hover:bg-[#cc0159] cursor-pointer">
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+                  <h3 className="text-white font-bold text-lg mb-2 text-center">{item.title}</h3>
+                  <p className="text-gray-200 text-sm text-center mb-3">{item.description}</p>
+                  <span className="text-[#fc006f] text-xs font-semibold bg-black/50 px-2 py-1 rounded">
+                    {item.category}
+                  </span>
+                  <Button size="sm" className="bg-[#fc006f] text-black hover:bg-[#cc0159] cursor-pointer mt-3">
                     View Details
                   </Button>
                 </div>
@@ -280,7 +398,7 @@ export default function HairSalonPage() {
                       <Star1 key={i} size="20" color="#a80049" variant="Bold" />
                     ))}
                   </div>
-                  <p className="text-gray-300 mb-4 italic">"{testimonial.review}"</p>
+                  <p className="text-gray-300 mb-4 italic">&ldquo;{testimonial.review}&rdquo;</p>
                   <div className="font-semibold text-[#fc006f]">{testimonial.name}</div>
                 </CardContent>
               </Card>
