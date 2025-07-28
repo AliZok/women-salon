@@ -48,7 +48,7 @@ export default function HairSalonPage() {
       <section id="home" className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10"></div>
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/images/woman.jpg"
           alt="Luxury Hair Salon Interior"
           fill
           className="object-cover"
@@ -96,37 +96,37 @@ export default function HairSalonPage() {
                 title: "Hair Cutting & Styling",
                 description: "Expert cuts and styling for all hair types",
                 price: "From $80",
-                image: "/placeholder.svg?height=300&width=400",
+                image: "/images/girl-1.jpg",
               },
               {
                 title: "Hair Coloring",
                 description: "Premium coloring techniques and treatments",
                 price: "From $120",
-                image: "/placeholder.svg?height=300&width=400",
+                image: "/images/girl-2.jpg",
               },
               {
                 title: "Hair Treatments",
                 description: "Nourishing treatments for healthy hair",
                 price: "From $60",
-                image: "/placeholder.svg?height=300&width=400",
+                image: "/images/wave-hairs.jpg",
               },
               {
                 title: "Bridal Styling",
                 description: "Special occasion and bridal hair styling",
                 price: "From $150",
-                image: "/placeholder.svg?height=300&width=400",
+                image: "/images/girl-3.avif",
               },
               {
                 title: "Extensions",
                 description: "Premium hair extensions and styling",
                 price: "From $200",
-                image: "/placeholder.svg?height=300&width=400",
+                image: "/images/girl-4.jpg",
               },
               {
                 title: "Keratin Treatment",
                 description: "Smoothing and strengthening treatments",
                 price: "From $180",
-                image: "/placeholder.svg?height=300&width=400",
+                image: "/images/girl-5.avif",
               },
             ].map((service, index) => (
               <Card
@@ -194,7 +194,7 @@ export default function HairSalonPage() {
             </div>
             <div className="relative">
               <Image
-                src="/placeholder.svg?height=600&width=500"
+                src="/images/dance-woman.jpg"
                 alt="Salon Interior"
                 width={500}
                 height={600}
