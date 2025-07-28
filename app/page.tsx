@@ -203,7 +203,7 @@ export default function HairSalonPage() {
               <div className="absolute -bottom-6 -left-6 bg-[#fc006f] text-black p-6 rounded-lg">
                 <div className="flex items-center space-x-2">
                   {/* Replace <StarSolidIcon className="h-6 w-6" /> with <Star1 size="24" color="#a80049" variant="Bold" /> */}
-                  <Star1 size="24" color="#a80049" variant="Bold" />
+                  <Star1 size="24" color="#FFD700" variant="Bold" />
                   <span className="text-2xl font-bold">4.9</span>
                 </div>
                 <div className="text-sm">Google Reviews</div>
@@ -395,7 +395,7 @@ export default function HairSalonPage() {
                   <div className="flex mb-4">
                     {/* Replace <StarSolidIcon key={i} className="h-5 w-5 text-[#fc006f]" /> with <Star1 key={i} size="20" color="#a80049" variant="Bold" /> */}
                     {Array.from({ length: testimonial.rating }, (_, i) => (
-                      <Star1 key={i} size="20" color="#a80049" variant="Bold" />
+                      <Star1 key={i} size="20" color="#FFD700" variant="Bold" />
                     ))}
                   </div>
                   <p className="text-gray-300 mb-4 italic">&ldquo;{testimonial.review}&rdquo;</p>
