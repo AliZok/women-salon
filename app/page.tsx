@@ -15,6 +15,20 @@ import { Scissor, Clock, Location, Call, Sms, Star1 } from "iconsax-react"
 export default function HairSalonPage() {
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Animated Intro Text */}
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black intro-container">
+        <div className="text-center">
+          <div className="animate-intro">
+            <h2 className="text-2xl md:text-4xl font-medium text-white mb-2">
+              by
+            </h2>
+            <h1 className="text-6xl md:text-8xl font-bold text-[#fc006f]">
+              ALI ZOKAEI
+            </h1>
+          </div>
+        </div>
+      </div>
+
       {/* Header */}
       <header className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-[#fc006f]/20">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
