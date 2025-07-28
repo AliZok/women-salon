@@ -424,7 +424,14 @@ export default function HairSalonPage() {
                 <div className="flex items-center space-x-3">
                   {/* Replace <MapPinIcon className="h-6 w-6 text-[#fc006f]" /> with <Location size="24" color="#a80049" /> */}
                   <Location size="24" color="#a80049" />
-                  <span className="text-gray-300">123 Luxury Avenue, Downtown, NY 10001</span>
+                  <a 
+                    href="https://maps.google.com/?q=Valiasr+Street,+Tehran,+Iran" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-[#fc006f] transition-colors cursor-pointer"
+                  >
+                    Valiasr Street, Tehran, Iran
+                  </a>
                 </div>
                 <div className="flex items-center space-x-3">
                   {/* Replace <PhoneIcon className="h-6 w-6 text-[#fc006f]" /> with <Call size="24" color="#a80049" /> */}
