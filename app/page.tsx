@@ -127,37 +127,37 @@ export default function HairSalonPage() {
     {
       title: { en: "Hair Cutting & Styling", fa: "کوتاهی و حالت‌دهی مو" },
       description: { en: "Expert cuts and styling for all hair types", fa: "کوتاهی و حالت‌دهی حرفه‌ای برای انواع مو" },
-      price: { en: "From $80", fa: "از ۸۰ دلار" },
+      price: { en: "From T80", fa: "از ۸۰ تومان" },
       image: "/images/girl-1.jpg",
     },
     {
       title: { en: "Hair Coloring", fa: "رنگ مو" },
       description: { en: "Premium coloring techniques and treatments", fa: "تکنیک‌ها و درمان‌های رنگ مو با کیفیت بالا" },
-      price: { en: "From $120", fa: "از ۱۲۰ دلار" },
+      price: { en: "From T120", fa: "از ۱۲۰ تومان" },
       image: "/images/girl-2.jpg",
     },
     {
       title: { en: "Hair Treatments", fa: "درمان مو" },
       description: { en: "Nourishing treatments for healthy hair", fa: "درمان‌های مغذی برای سلامت مو" },
-      price: { en: "From $60", fa: "از ۶۰ دلار" },
+      price: { en: "From T60", fa: "از ۶۰ تومان" },
       image: "/images/wave-hairs.jpg",
     },
     {
       title: { en: "Bridal Styling", fa: "آرایش عروس" },
       description: { en: "Special occasion and bridal hair styling", fa: "آرایش مو برای مراسم خاص و عروس" },
-      price: { en: "From $150", fa: "از ۱۵۰ دلار" },
+      price: { en: "From T150", fa: "از ۱۵۰ تومان" },
       image: "/images/girl-3.avif",
     },
     {
       title: { en: "Extensions", fa: "اکستنشن مو" },
       description: { en: "Premium hair extensions and styling", fa: "اکستنشن و حالت‌دهی حرفه‌ای مو" },
-      price: { en: "From $200", fa: "از ۲۰۰ دلار" },
+      price: { en: "From T200", fa: "از ۲۰۰ تومان" },
       image: "/images/girl-4.jpg",
     },
     {
       title: { en: "Keratin Treatment", fa: "کراتین تراپی" },
       description: { en: "Smoothing and strengthening treatments", fa: "درمان‌های صاف‌کننده و تقویت‌کننده مو" },
-      price: { en: "From $180", fa: "از ۱۸۰ دلار" },
+      price: { en: "From T180", fa: "از ۱۸۰ تومان" },
       image: "/images/girl-5.avif",
     },
   ]
