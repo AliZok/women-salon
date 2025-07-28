@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import Image from "next/image"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 // Remove this line:
 // import { ScissorsIcon, ClockIcon, MapPinIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline"
@@ -16,7 +17,7 @@ import { Scissor, Clock, Location, Call, Sms, Star1 } from "iconsax-react"
 
 export default function HairSalonPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Animated Intro Text */}
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black intro-container">
         <div className="text-center">
@@ -33,7 +34,7 @@ export default function HairSalonPage() {
 
       {/* Header */}
       <header className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-[#fc006f]/20">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between max-w-full">
           <div className="flex items-center space-x-2">
             {/* Replace <ScissorsIcon className="h-8 w-8 text-[#fc006f]" /> with <Scissor size="32" color="#a80049" /> */}
             <Scissor size="32" color="white" />
@@ -76,7 +77,7 @@ export default function HairSalonPage() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10"></div>
         <Image
           src="/images/woman.jpg"
@@ -85,7 +86,7 @@ export default function HairSalonPage() {
           className="object-cover"
           priority
         />
-        <div className="relative z-20 text-center max-w-4xl mx-auto px-4">
+        <div className="relative z-20 text-center max-w-4xl mx-auto px-4 w-full">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="text-white">Transform Your</span>
             <br />
@@ -111,17 +112,29 @@ export default function HairSalonPage() {
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-gradient-to-b from-black to-[#292929]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+        <div className="container mx-auto px-4 max-w-full">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-[#fc006f]">Premium</span> Services
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Indulge in our comprehensive range of luxury hair and beauty services
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {[
               {
                 title: "Hair Cutting & Styling",
@@ -160,10 +173,16 @@ export default function HairSalonPage() {
                 image: "/images/girl-5.avif",
               },
             ].map((service, index) => (
-              <Card
+              <motion.div
                 key={index}
-                className="bg-[#292929] border-[#fc006f]/20 hover:border-[#fc006f]/40 transition-all duration-300 group"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
+                <Card
+                  className="bg-[#292929] border-[#fc006f]/20 hover:border-[#fc006f]/40 transition-all duration-300 group"
+                >
                 <div className="relative overflow-hidden">
                   <Image
                     src={service.image || "/placeholder.svg"}
@@ -185,16 +204,28 @@ export default function HairSalonPage() {
                   </div>
                 </CardContent>
               </Card>
+                </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* About Section */}
       <section id="about" className="py-20 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+        <div className="container mx-auto px-4 max-w-full">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-[#fc006f]">About</span> Luxe Salon
               </h2>
@@ -222,8 +253,14 @@ export default function HairSalonPage() {
                   <div className="text-gray-300">Expert Stylists</div>
                 </div>
               </div>
-            </div>
-            <div className="relative">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative"
+            >
               <Image
                 src="/images/dance-woman.jpg"
                 alt="Salon Interior"
@@ -239,22 +276,34 @@ export default function HairSalonPage() {
                 </div>
                 <div className="text-sm">Google Reviews</div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Gallery Section */}
       <section id="gallery" className="py-20 bg-gradient-to-b from-[#292929] to-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+        <div className="container mx-auto px-4 max-w-full">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-[#fc006f]">Our</span> Work
             </h2>
             <p className="text-xl text-gray-300">Discover the artistry and craftsmanship in every transformation</p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          >
             {[
               {
                 id: 1,
@@ -388,13 +437,13 @@ export default function HairSalonPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Testimonials Section */}
       <section className="py-20 bg-black">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-[#fc006f]">Client</span> Reviews
@@ -440,7 +489,7 @@ export default function HairSalonPage() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gradient-to-b from-[#292929] to-black">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-[#fc006f]">Get In</span> Touch
@@ -548,7 +597,7 @@ export default function HairSalonPage() {
 
       {/* Footer */}
       <footer className="bg-black border-t border-[#fc006f]/20 py-8">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               {/* Replace <ScissorsIcon className="h-6 w-6 text-[#fc006f]" /> with <Scissor size="32" color="#a80049" /> */}
