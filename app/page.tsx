@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -38,21 +40,36 @@ export default function HairSalonPage() {
             <span className="text-2xl font-bold text-[#fc006f]">Luxe Salon</span>
           </div>
           <nav className="hidden md:flex space-x-8">
-            <Link href="#home" className="hover:text-[#fc006f] transition-colors">
+            <button 
+              onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
+              className="hover:text-[#fc006f] transition-colors cursor-pointer"
+            >
               Home
-            </Link>
-            <Link href="#services" className="hover:text-[#fc006f] transition-colors">
+            </button>
+            <button 
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              className="hover:text-[#fc006f] transition-colors cursor-pointer"
+            >
               Services
-            </Link>
-            <Link href="#about" className="hover:text-[#fc006f] transition-colors">
+            </button>
+            <button 
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              className="hover:text-[#fc006f] transition-colors cursor-pointer"
+            >
               About
-            </Link>
-            <Link href="#gallery" className="hover:text-[#fc006f] transition-colors">
+            </button>
+            <button 
+              onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
+              className="hover:text-[#fc006f] transition-colors cursor-pointer"
+            >
               Gallery
-            </Link>
-            <Link href="#contact" className="hover:text-[#fc006f] transition-colors">
+            </button>
+            <button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="hover:text-[#fc006f] transition-colors cursor-pointer"
+            >
               Contact
-            </Link>
+            </button>
           </nav>
           <Button className="bg-[#fc006f] text-black hover:bg-[#cc0159] cursor-pointer">Book Now</Button>
         </div>
