@@ -79,7 +79,7 @@ export default function HairSalonPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <section id="services" className="py-20 bg-gradient-to-b from-black to-[#292929]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -131,7 +131,7 @@ export default function HairSalonPage() {
             ].map((service, index) => (
               <Card
                 key={index}
-                className="bg-gray-900 border-[#fc006f]/20 hover:border-[#fc006f]/40 transition-all duration-300 group"
+                className="bg-[#292929] border-[#fc006f]/20 hover:border-[#fc006f]/40 transition-all duration-300 group"
               >
                 <div className="relative overflow-hidden">
                   <Image
@@ -214,7 +214,7 @@ export default function HairSalonPage() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-20 bg-gradient-to-b from-gray-900 to-black">
+      <section id="gallery" className="py-20 bg-gradient-to-b from-[#292929] to-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -390,7 +390,7 @@ export default function HairSalonPage() {
                 rating: 5,
               },
             ].map((testimonial, index) => (
-              <Card key={index} className="bg-gray-900 border-[#fc006f]/20">
+              <Card key={index} className="bg-[#292929] border-[#fc006f]/20">
                 <CardContent className="p-6">
                   <div className="flex mb-4">
                     {/* Replace <StarSolidIcon key={i} className="h-5 w-5 text-[#fc006f]" /> with <Star1 key={i} size="20" color="#a80049" variant="Bold" /> */}
@@ -408,7 +408,7 @@ export default function HairSalonPage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-black">
+      <section id="contact" className="py-20 bg-gradient-to-b from-[#292929] to-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -468,7 +468,7 @@ export default function HairSalonPage() {
               </div>
             </div>
 
-            <Card className="bg-gray-900 border-[#fc006f]/20">
+            <Card className="bg-[#292929] border-[#fc006f]/20">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-bold text-[#fc006f] mb-6">Book Appointment</h3>
                 <form className="space-y-4">
