@@ -112,6 +112,25 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #181818;
+}
+::-webkit-scrollbar-thumb {
+  background: #fc006f;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c80056;
+}
+
+/* For Firefox */
+html {
+  scrollbar-color: #fc006f #181818;
+  scrollbar-width: thin;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
